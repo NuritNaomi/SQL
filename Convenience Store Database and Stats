@@ -1,0 +1,28 @@
+--Create a convenience store database
+
+CREATE TABLE Store (id INTEGER PRIMARY KEY, name TEXT, quanity INTEGER, purchased_weekly INTEGER, price INTEGER);
+
+INSERT INTO Store VALUES (1, "Beef", 15, 14, 8.55);
+INSERT INTO Store VALUES (2, "Corn", 30, 23, 1.99);
+INSERT INTO Store VALUES (3, "Manga", 10, 8, 7.99);
+INSERT INTO Store VALUES (4, "Mango", 20, 15,2.50);
+INSERT INTO Store VALUES (5, "Weights", 8, 1, 14.99);
+INSERT INTO Store VALUES (6, "Milk", 50, 32, 1.50);
+INSERT INTO Store VALUES (7, "Coffee", 25, 11, 8.99);
+INSERT INTO Store VALUES (8, "CDs", 5, 3, 7.56);
+INSERT INTO Store VALUES (9, "Mouse", 8, 4, 5.99);
+INSERT INTO Store VALUES (10, "Yogurt", 30, 26, 2.99);
+INSERT INTO Store VALUES (11, "Beer",15, 12, 16.99);
+INSERT INTO Store VALUES (12, "Lighter", 20, 5, .99);
+INSERT INTO Store VALUES (13, "Shampoo", 25, 17, 4.99);
+INSERT INTO Store VALUES (14, "Conditioner", 25, 19, 4.99);
+INSERT INTO Store VALUES (15, "lotion", 10, 9, 3.99);
+
+--Display the database orderd by purchased weekly.
+SELECT * FROM Store ORDER BY purchased_weekly;
+
+--What is the amount of product moved in bulk? 
+SELECT ID, SUM(quanity),SUM(purchased_weekly) FROM Store;
+
+--What is the average price, weekly purchased)
+SELECT ID, AVG(purchased_weekly), AVG(price) FROM Store;
